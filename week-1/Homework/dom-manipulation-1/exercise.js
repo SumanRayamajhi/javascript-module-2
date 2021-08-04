@@ -103,7 +103,6 @@ Also clear the text inside the input field
 let addText = document.querySelector("#addArticleBtn");
 
 addText.addEventListener("click", () => {
-//    addNewParagraph();
    let newPp = document.createElement("p");
    let textEl = document.querySelector(".form-control").value;
    newPp.textContent = textEl;

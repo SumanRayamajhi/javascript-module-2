@@ -150,6 +150,12 @@ body {
 #greenBtn {
 	background: #87ca8a
 }
+.redBackground {
+	background-color: red;
+}
+.whiteBackground {
+	background-color: white;
+}
 
 @media screen and (min-width: 992px) {
 
