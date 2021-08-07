@@ -7,6 +7,19 @@ const studentGrades = {
     george: 17,
     abdul: 19,
   };
+
+  const studentGradesValues = Object.values(studentGrades);
+  
+  function moreThan18(grades) {
+     return grades > 18;
+   }
+   const studentsGradesMoreThan18 = studentGradesValues.filter(moreThan18);
+
+   console.log(`${studentGradesValues}: ${studentsGradesMoreThan18}`);
+ 
+    
+  
+  
   
   // Prints
   // TOM - 20

@@ -14,8 +14,14 @@
  * </div>
  */
 function exerciseOne(arrayOfPeople) {
-  let content = document.querySelector("#content");
-}
+
+    let content = document.querySelector("#content");
+
+    arrayOfPeople.forEach(person => {
+      content.appendChild(document.createElement("h1")).textContent = person.name;
+      content.appendChild(document.createElement("h2")).textContent = person.job;
+    })
+ }
 
 /**
  *
@@ -26,29 +32,18 @@ function exerciseOne(arrayOfPeople) {
  */
 function exerciseTwo(shopping) {
   //Write your code in here
+  let ulEl = document.createElement("ul");
+      content.appendChild(ulEl);
+  shopping.forEach(item => {
+       ulEl.appendChild(document.createElement("li")).textContent = item;
+     })
 }
 
-/**
-    I'd like to display my three favorite books inside a nice webpage!
 
-    const books = [
-        {
-            title: "The Design of Everyday Things",
-            author: "Don Norman",
-            alreadyRead: false
-        },
-        {
-            title: "The Most Human Human",
-            author: "Brian Christian",
-            alreadyRead: true
-        },
-        {
-            title: "The Pragmatic Programmer",
-            author: "Andrew Hunt",
-            alreadyRead: true
-        }
-    ];
 
+//    I'd like to display my three favorite books inside a nice webpage!
+
+/*
     Iterate through the array of books.
     - For each book, create a <p> element with the book title and author and append it to the page.
     - Use a <ul> and <li> to display the books.
@@ -58,7 +53,22 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
-  //Write your code in here
+  let ulEl1 = document.createElement("ul");
+    content.appendChild(ulEl1);
+  
+  books.forEach(element => {
+    
+    let liEl = document.createElement("li");
+    ulEl1.appendChild(liEl);
+    liEl.appendChild(document.createElement("p")).textContent = element.title + " - " + element.author;
+    
+    for (var i = 1; i <= 3; i++){
+      let imageEl = document.createElement("img");
+      imageEl.src = "img/img" + i + ".jpg"
+      liEl.appendChild(imageEl);
+    }
+    
+  })
 }
 
 //
@@ -72,9 +82,12 @@ function exerciseThree(books) {
 //
 
 let people = [
-  { name: "Chris", job: "Teacher" },
-  { name: "Joanna", job: "Student" },
-  { name: "Boris", job: "Prime Minister" }
+  { name: "Chris", 
+    job: "Teacher" },
+  { name: "Joanna", 
+    job: "Student" },
+  { name: "Boris", 
+    job: "Prime Minister" }
 ];
 
 exerciseOne(people);

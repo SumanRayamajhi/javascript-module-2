@@ -4,8 +4,9 @@
 
 var dog = {
     name: 'Billy',
-    wantsToPlay: false
+    wantsToPlay: true
 };
+dog["name"] = "Rex";
 
 // WRITE CODE HERE
 

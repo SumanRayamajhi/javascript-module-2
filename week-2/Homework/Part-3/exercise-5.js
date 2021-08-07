@@ -39,6 +39,12 @@ var writers = [
   },
 ];
 
+for(let i = 0; i <= writers.length - 1; i++) {
+  console.log("Hi, my name is " + writers[i].firstName + " " + writers[i].lastName + " , " + "I am " + writers[i].age + " years old, and work as a " + writers[i].occupation)
+}
+
+
+
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
 */

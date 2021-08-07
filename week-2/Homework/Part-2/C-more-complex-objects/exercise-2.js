@@ -1,7 +1,26 @@
-/*
+/**
 Given the same "house" object again
 
 Follow the instructions below and then run the file and make sure it outputs the correct results
+
+let house = {
+  address: "1 Kinning Park",
+  previousOwners: ["Claire M.", "John A."],
+  currentOwner: {
+    firstName: "Margaret",
+    lastName: "Conway",
+  },
+};
+
+let newCurrentOwner = {
+  firstName: "Georgina",
+  lastName: "Hernandez",
+};
+
+
+  DO NOT EDIT ANYTHING ABOVE THIS LINE
+
+  WRITE YOUR CODE BELOW
 */
 
 let house = {
@@ -18,12 +37,9 @@ let newCurrentOwner = {
   lastName: "Hernandez",
 };
 
-/*
-  DO NOT EDIT ANYTHING ABOVE THIS LINE
-
-  WRITE YOUR CODE BELOW
-*/
-
+   house.currentOwner = newCurrentOwner;
+   house.previousOwners[1] = "Stephen B"; 
+   house.isForSale = "false";
 // - assign the value of the variable 'newCurrentOwner' as the value to the house's "currentOwner"
 // - from the list of previous owners, replace only "John A." with "Stephen B."
 // - give the house a new property called 'isForSale' with the value 'false'

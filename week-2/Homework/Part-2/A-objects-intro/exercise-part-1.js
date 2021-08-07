@@ -16,4 +16,40 @@ var car = {
 };
 
 */
+var motorbike = {
+    brand: "Honda",
+    model: "2021CB100R",
+    color: "black",
+    horsepowe: "998cc"
+}
+
+var mountainBike = {
+    brand: "Annondale",
+    model: "gravel bikes",
+    frame: "disc-brakes"
+}
+
+var laptop = {
+    brand: "Apple",
+    model: "macbook-Pro",
+    operatingSystem: "Mac OS",
+    screenSize: 13.3,
+    isTouchscreen: false
+}
+
+var mobile = {
+    brand: "Apple",
+    model: "iPhone 12 ProMax",
+    screenSize: 6.7,
+    operatingSystem: iOS,
+    isTouchscreen: true
+}
+
+var car = {
+    brand: "Lamborghini",
+    model: "gallardo",
+    color: "white",
+    horsepower: 115,
+    doors: 4
+}
 

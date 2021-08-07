@@ -7,7 +7,8 @@ Try to think of as many properties as you can!
 */
 
 let laptop = {
-    brand: "Lenovo",
+    brand: "HP",
     screenSize: 13,
-    isTouchscreen: true,
+    isTouchscreen: false,
   };
+  console.log(laptop);
