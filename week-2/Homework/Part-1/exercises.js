@@ -56,17 +56,22 @@ function exerciseThree(books) {
   let content = document.querySelector("#content");
   let ulEl1 = document.createElement("ul");
     content.appendChild(ulEl1);  
+    ulEl1.className += "toFlex"
   
   books.forEach((book, index) => {
     
     let liEl1 = document.createElement("li");
     ulEl1.appendChild(liEl1);
-    liEl1.appendChild(document.createElement("p")).textContent = book.title + " - " + book.author;
 
+    let pEl = document.createElement("p");
+    liEl1.appendChild(pEl);
+    pEl.textContent = book.title + " - " + book.author;
+    pEl.className = "toPadding"
     
     let imgEl = document.createElement("img");
     imgEl.src = "./img" + (index + 1) + ".jpg";
     liEl1.appendChild(imgEl);
+    imgEl.className = "toPadding"
     if(book.alreadyRead === true) {
       liEl1.className += "bookRead"
     } else {

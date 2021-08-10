@@ -153,12 +153,21 @@ body {
 .bookRead {
 	background-color: green;
 	width: 22rem;
-	height: 20rem;
+	height: 21.5rem;
 }
 .bookUnRead {
 	background-color: red;
 	width: 22rem;
-	height: 20rem;
+	height: 21.5rem;
+}
+.toFlex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	list-style: none;
+}
+.toPadding {
+	padding-left: .9rem;
 }
 
 @media screen and (min-width: 992px) {
