@@ -150,6 +150,16 @@ body {
 #greenBtn {
 	background: #87ca8a
 }
+.bookRead {
+	background-color: green;
+	width: 22rem;
+	height: 20rem;
+}
+.bookUnRead {
+	background-color: red;
+	width: 22rem;
+	height: 20rem;
+}
 
 @media screen and (min-width: 992px) {
 

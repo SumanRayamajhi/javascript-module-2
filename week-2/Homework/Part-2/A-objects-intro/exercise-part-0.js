@@ -10,5 +10,8 @@ let laptop = {
     brand: "HP",
     screenSize: 13,
     isTouchscreen: false,
-  };
+    color: ["Gray", "White", "Black"],
+    operatingSystem: "Intel core i5",
+    model: "HP ProBook "
+}
   console.log(laptop);

@@ -59,14 +59,30 @@ let restaurant1 = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
-      numberOfPeople.find(restaurants.totalSeats > restaurants.numberOfCustomers)
-      // Complete here
+      return this.restaurants
+      .filter((restaurant) => {
+        const availableSeats = restaurant.totalSeats - restaurant.numberOfCustomers
+        return availableSeats >= numberOfPeople
+      }).map(restaurant => restaurant.name)
+      
     },
+
+    /**2) Define a method findRestaurantServingDish which takes a dish name in parameter and returns
+all the restaurant names serving this dish. */
+
     findRestaurantServingDish: function (dishName) {
-      // Complete here
+      return this.restaurants
+      .filter(restaurant => restaurant.menu.includes(dishName))
+      .map(restaurant => restaurant.name)
     },
+
+    /**3) Define a method countNumberOfRestaurantsInArea which takes an area of Glasgow in parameter (center, west),
+and returns the number of restaurants in this area. */
+
     countNumberOfRestaurantsInArea: function (area) {
-      // Complete here
+      return this.restaurants
+      .filter((restaurant) => 
+        restaurant.address.area === area).length
     },
   };
   

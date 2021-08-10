@@ -8,19 +8,18 @@ const studentGrades = {
     abdul: 19,
   };
 
-  const studentGradesValues = Object.values(studentGrades);
-  
-  function moreThan18(grades) {
-     return grades > 18;
-   }
-   const studentsGradesMoreThan18 = studentGradesValues.filter(moreThan18);
+  Object.entries(studentGrades).forEach(student => {
+    let [ name, grade ] = student
+    if (grade > 18) 
+    console.log(name.toUpperCase() + " - " + grade)
+  })
+  // Object.keys(studentGrades).forEach((name) => {
+  //   let grade = studentGrades[name]
+  //   if (grade > 18)
+  //   console.log(name.toUpperCase() + "-" + grade)
+  // })
 
-   console.log(`${studentGradesValues}: ${studentsGradesMoreThan18}`);
- 
-    
-  
-  
-  
+
   // Prints
   // TOM - 20
   // ABDUL - 19

@@ -24,7 +24,7 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
-let persons = [person1, person2, person3];// Complete here
+let persons = [person1, person2, person3];
 
 function personWithNames(person) {
     return person.name;

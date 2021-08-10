@@ -18,8 +18,8 @@ function exerciseOne(arrayOfPeople) {
     let content = document.querySelector("#content");
 
     arrayOfPeople.forEach(person => {
-      content.appendChild(document.createElement("h1")).textContent = person.name;
-      content.appendChild(document.createElement("h2")).textContent = person.job;
+      content.appendChild(document.createElement("h1")).textContent = person["name"];
+      content.appendChild(document.createElement("h2")).textContent = person["job"];
     })
  }
 
@@ -53,21 +53,25 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
+  let content = document.querySelector("#content");
   let ulEl1 = document.createElement("ul");
-    content.appendChild(ulEl1);
+    content.appendChild(ulEl1);  
   
-  books.forEach(element => {
+  books.forEach((book, index) => {
     
-    let liEl = document.createElement("li");
-    ulEl1.appendChild(liEl);
-    liEl.appendChild(document.createElement("p")).textContent = element.title + " - " + element.author;
+    let liEl1 = document.createElement("li");
+    ulEl1.appendChild(liEl1);
+    liEl1.appendChild(document.createElement("p")).textContent = book.title + " - " + book.author;
+
     
-    for (var i = 1; i <= 3; i++){
-      let imageEl = document.createElement("img");
-      imageEl.src = "img/img" + i + ".jpg"
-      liEl.appendChild(imageEl);
+    let imgEl = document.createElement("img");
+    imgEl.src = "./img" + (index + 1) + ".jpg";
+    liEl1.appendChild(imgEl);
+    if(book.alreadyRead === true) {
+      liEl1.className += "bookRead"
+    } else {
+      liEl1.className += "bookUnRead"
     }
-    
   })
 }
 

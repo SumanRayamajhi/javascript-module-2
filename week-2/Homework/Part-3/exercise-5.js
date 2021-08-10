@@ -39,9 +39,10 @@ var writers = [
   },
 ];
 
-for(let i = 0; i <= writers.length - 1; i++) {
-  console.log("Hi, my name is " + writers[i].firstName + " " + writers[i].lastName + " , " + "I am " + writers[i].age + " years old, and work as a " + writers[i].occupation)
-}
+writers.filter(writer => writer.alive).forEach(writer => {
+  const { firstName, lastName, age, occupation, alive } = writer
+  console.log(`Hi, my name is ${firstName} ${lastName}, I am ${age} years old, and work as a ${occupation}`)
+})
 
 
 

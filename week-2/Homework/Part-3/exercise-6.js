@@ -99,5 +99,79 @@ var mentors = [
 
 ];
 
-//YOUR CODE HERE
+/**7. Create an object method .addStudentLikes() that increments by one the attribute studentLikes */
+mentors.forEach(mentor => {
+  mentor.addStudentLikes = function() {
+    this.studentLikes++
+  }
+})
+
+/**8. Create a function that adds a student like to all mentors in the array */
+function addStudentsLike(mentors) {
+  mentors.forEach(mentor => mentor.addStudentLikes())
+}
+mentors.forEach(mentor => console.log(mentor.firstName, mentor.studentLikes))
+addStudentsLike(mentors)
+mentors[0].addStudentLikes()
+console.log("------------------")
+mentors.forEach(mentor => console.log(mentor.firstName, mentor.studentLikes))
+
+/**1. Loop through the array, and for each object, `console.log()` out the sentence only for
+mentors that are in Barcelona and one of the skills is React
+"Hi, my name is {firstName} {lastName}. I work in Barcelona and i know React." */
+
+
+mentors.filter(mentor => {
+  const inBarcelona = mentor.job.city === "Barcelona"
+  const knowsReact = mentor.skills.includes("React")
+  return inBarcelona && knowsReact
+})
+.forEach(mentor => {
+  const { firstName, lastName } = mentor
+  console.log(`Hi, my name is ${firstName} ${lastName}. I work in Barcelona and I know React.`)
+  })
+
+
+/** 2. To those that work in Barcelona, set "Jun1" in the class attribute, 
+and add a new skill to the list "SQL". */
+mentors.forEach(mentor => {
+  if(mentor.job.city === "Barcelona") {
+     mentor.class = "June1"
+     mentor.skills.push("SQL")
+  }
+})
+console.log("--------------------")
+mentors.forEach( 
+  mentor => console.log(mentor.firstName, mentor.class, mentor.skills)
+)
+
+/**3. Create an object method with the name .addSkill() to be able to add skills from it */
+mentors.forEach(mentor => {
+  mentor.addSkill = function() {
+    this.Skill++
+  }
+})
+
+/**4. Create a function to add a skill to all members in a list of mentors*/
+function addSkills(mentors, newSkill) {
+  mentors.forEach(mentor => mentor.skills.push(newSkill))
+}
+
+/**5. Create a function to remove a skill to all members in a list of mentors */
+function removeSkill(mentors,newSkill){
+  mentors.forEach(mentor => mentor.skills.remove(newSkill))
+}
+/**6. Create a function mentorWithMoreSkills() that returns the name of the mentor with more number of skills */
+function mentorWithMoreSkills(mentors) {
+  mentors.sort((mentor1, mentor2) => mentor1.skills.length > mentor2.skills.length)
+  mentors.forEach(mentor => console.log(mentor.firstName, mentor.skills.length))
+}
+mentorWithMoreSkills(mentors);
+
+
+
+
+
+
+
 

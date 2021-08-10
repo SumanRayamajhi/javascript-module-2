@@ -41,7 +41,7 @@ var mobile = {
     brand: "Apple",
     model: "iPhone 12 ProMax",
     screenSize: 6.7,
-    operatingSystem: iOS,
+    operatingSystem: "iOS",
     isTouchscreen: true
 }
 
@@ -52,4 +52,9 @@ var car = {
     horsepower: 115,
     doors: 4
 }
+console.log(motorbike);
+console.log(mountainBike);
+console.log(laptop);
+console.log(mobile);
+console.log(car);
 
