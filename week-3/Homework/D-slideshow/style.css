@@ -1,1 +1,26 @@
 /** Write your CSS in here **/
+body {
+    background-color: rgb(225, 234, 235);
+}
+img {
+    height: 350px;
+    width: 620px;
+}
+button {
+     border-radius: 6px;
+     outline: none;
+     border: 1px solid gray;
+     background-color: rgb(163, 223, 163);
+     margin: 8px;
+     box-shadow: 1px 1px 1px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(35%);
+}
+input {
+    border-radius: 6px;
+    outline: none;
+}

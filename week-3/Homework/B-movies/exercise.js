@@ -58,10 +58,80 @@ var movies = [
   },
 ];
 
+
+var movieCounter = 0;
+
+const allMoviesEl = document.getElementById("all-movies");
+const moviesCountEl = document.getElementById("movies-number");
+
 // create showMovies function
 
+function showMovies(movies) {
+  if(!Array.isArray(movies)) return
+
+  movies.forEach(movie => addMovie(movie))
+}
+// showMovies(movies);
 
 // create a new movie object for your favorite movie
 
+const favMovie = {
+  title: "Gone Girl",
+  director: "David Fincher",
+  type: "Mystery-Thriller",
+  haveWatched: "true"
+} 
+const favMovie1 = {
+  title: "Spider-Man: No Way Home",
+  director: "Jon Watts",
+  type: "Superhero",
+  haveWatched: "false"
+} 
 
-// create addMovies function
+// create addMovie function
+function addMovie(movie) {
+  const pEl = document.createElement("p");
+  const { title, director } = movie
+  pEl.textContent = `"${title}", directed by ${director}`
+
+  allMoviesEl.appendChild(pEl);
+
+  moviesCountEl.textContent = ++movieCounter;
+}
+
+setTimeout(() => showMovies(movies), 1000)
+setTimeout(() => addMovie(favMovie), 2000)
+setTimeout(() => addMovie(favMovie1), 3000)
+
+// Form
+
+const formEl = document.createElement("form")
+allMoviesEl.after(formEl)
+
+const sampleMovie = movies[0]
+Object.keys(sampleMovie).forEach(key => {
+  const inputEl =document.createElement("input")
+  inputEl.setAttribute("id", `${key}`)
+  inputEl.placeholder = key.charAt(0).toUpperCase() + key.slice(1)
+  formEl.appendChild(inputEl)
+})
+
+const submitButton = document.createElement("button")
+submitButton.textContent = "Save"
+formEl.appendChild(submitButton)
+formEl.addEventListener("submit", onSave)
+
+function onSave(event) {
+  event.preventDefault()
+
+  const newMovie = {}
+  //console.log(event.target.elements);
+
+  Object.keys(sampleMovie).forEach(key => {
+    newMovie[key] = event.target.elements[key].value
+  })
+
+  //console.log("new one: ", newMovie)
+
+  addMovie(newMovie) 
+}
